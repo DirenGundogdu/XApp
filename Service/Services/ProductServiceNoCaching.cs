@@ -7,12 +7,12 @@ using Core.UnitOfWorks;
 
 namespace Service.Services;
 
-public class ProductService : Service<Product>, IProductService
+public class ProductServiceNoCaching : Service<Product>, IProductService
 {
     private readonly IProductRepository _productRepository ;
     private readonly IMapper _mapper;
 
-    public ProductService(IUnitOfWork unitOfWork, IGenericRepository<Product> repository, IProductRepository productRepository, IMapper mapper) : base(unitOfWork, repository)
+    public ProductServiceNoCaching(IUnitOfWork unitOfWork, IGenericRepository<Product> repository, IProductRepository productRepository, IMapper mapper) : base(unitOfWork, repository)
     {
         _productRepository = productRepository;
         _mapper = mapper;
