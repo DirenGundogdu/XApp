@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Core.DTOs;
+﻿namespace Core.DTOs;
 
 public class ProductDto : BaseDto
 {

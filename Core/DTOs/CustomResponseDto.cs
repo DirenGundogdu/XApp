@@ -12,9 +12,9 @@ public class CustomResponseDto<T> //static factory method
     public List<String>? Errors { get; set; }
 
 
-    public static CustomResponseDto<T> Success(int statusCode,T data)
+    public static CustomResponseDto<T> Success(int statusCode, T data)
     {
-        return new CustomResponseDto<T>{ Data = data, StatusCode = statusCode};
+        return new CustomResponseDto<T> { Data = data, StatusCode = statusCode };
     }
 
     public static CustomResponseDto<T> Success(int statusCode)
@@ -22,13 +22,13 @@ public class CustomResponseDto<T> //static factory method
         return new CustomResponseDto<T> { StatusCode = statusCode };
     }
 
-    public static CustomResponseDto<T> Fail(int statusCode,List<string> errors )
+    public static CustomResponseDto<T> Fail(int statusCode, List<string> errors)
     {
         return new CustomResponseDto<T> { StatusCode = statusCode, Errors = errors };
     }
 
     public static CustomResponseDto<T> Fail(int statusCode, string error)
     {
-        return new CustomResponseDto<T> { StatusCode = statusCode, Errors = new List<string> { error } }; 
+        return new CustomResponseDto<T> { StatusCode = statusCode, Errors = new List<string> { error } };
     }
 }

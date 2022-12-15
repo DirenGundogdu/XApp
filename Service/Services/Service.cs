@@ -77,6 +77,6 @@ public class Service<T> : IService<T> where T : class
 
     public IQueryable<T> Where(Expression<Func<T, bool>> expression)
     {
-       return _repository.Where(expression);
+        return _repository.Where(expression);
     }
 }

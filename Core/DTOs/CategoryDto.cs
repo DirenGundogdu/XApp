@@ -1,8 +1,6 @@
-﻿using Core.Models;
+﻿namespace Core.DTOs;
 
-namespace Core.DTOs;
-
-public class CategoryDto: BaseDto
+public class CategoryDto : BaseDto
 {
     public string? Name { get; set; }
 }

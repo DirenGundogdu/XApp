@@ -6,7 +6,6 @@ using Core.Services;
 using Core.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
-using Repository.Repositories;
 using Service.Exceptions;
 using System.Linq.Expressions;
 
@@ -71,13 +70,13 @@ public class ProductServiceWithCaching : IProductService
         return Task.FromResult(product);
     }
 
-    public Task<CustomResponseDto<List<ProductWithCategoryDto>>> GetProductsWithCategory()
+    public Task<List<ProductWithCategoryDto>> GetProductsWithCategory()
     {
         var products = _memoryCache.Get<IEnumerable<Product>>(CacheProductKey);
 
         var productsWithCategoryDto = _mapper.Map<List<ProductWithCategoryDto>>(products);
 
-        return Task.FromResult(CustomResponseDto<List<ProductWithCategoryDto>>.Success(200,productsWithCategoryDto));
+        return Task.FromResult(productsWithCategoryDto);
     }
 
     public async Task RemoveAsync(Product entity)

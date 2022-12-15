@@ -27,7 +27,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
     public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
     {
-       return await _dbSet.AnyAsync(expression);
+        return await _dbSet.AnyAsync(expression);
     }
 
     public IQueryable<T> GetAll()
@@ -47,7 +47,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
     public void RemoveRange(IEnumerable<T> entities)
     {
-       _dbSet.RemoveRange(entities);
+        _dbSet.RemoveRange(entities);
     }
 
     public void Update(T entity)
